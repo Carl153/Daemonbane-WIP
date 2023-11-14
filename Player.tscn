@@ -343,7 +343,7 @@ radius = 14.5
 height = 27.0
 
 [sub_resource type="RectangleShape2D" id=112]
-extents = Vector2( 41.5, 10 )
+extents = Vector2( 45, 25 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 100, 483 )
@@ -357,7 +357,7 @@ position = Vector2( 51, -22.25 )
 scale = Vector2( 1.31667, 1.4375 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 6
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -367,7 +367,7 @@ shape = SubResource( 111 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 100.5, -23 )
+position = Vector2( 104, -21 )
 shape = SubResource( 112 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
