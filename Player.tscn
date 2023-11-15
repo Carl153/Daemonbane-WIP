@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Character/Colour1/Outline/120x80_PNGSheets/_Death.png" type="Texture" id=1]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Character/Colour1/Outline/120x80_PNGSheets/_Run.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Character/Colour1/Outline/120x80_PNGSheets/_TurnAround.png" type="Texture" id=7]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Character/Colour1/Outline/120x80_PNGSheets/_Attack2.png" type="Texture" id=8]
 [ext_resource path="res://Player.gd" type="Script" id=9]
+[ext_resource path="res://healthbare.tres" type="Theme" id=10]
 
 [sub_resource type="AtlasTexture" id=54]
 flags = 4
@@ -304,7 +305,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
-"name": "death",
+"name": "dead",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
@@ -339,29 +340,29 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=111]
-radius = 14.5
+radius = 12.5
 height = 27.0
 
 [sub_resource type="RectangleShape2D" id=112]
 extents = Vector2( 45, 25 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 100, 483 )
+position = Vector2( 104, 498 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 51, -22.25 )
-scale = Vector2( 1.31667, 1.4375 )
+position = Vector2( 52, -22.25 )
+scale = Vector2( 1.3, 1.4375 )
 frames = SubResource( 52 )
 animation = "idle"
-frame = 8
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 44.5, -22 )
+position = Vector2( 45.5, -20 )
 shape = SubResource( 111 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -369,5 +370,16 @@ shape = SubResource( 111 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 104, -21 )
 shape = SubResource( 112 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+margin_left = 32.376
+margin_top = -62.7459
+margin_right = 56.376
+margin_bottom = -50.7459
+theme = ExtResource( 10 )
+value = 70.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

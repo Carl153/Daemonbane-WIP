@@ -62,7 +62,10 @@ func start_roll():
 	is_rolling = true
 	velocity.x = ROLL_SPEED * facing_direction
 	$AnimatedSprite.play("roll")
-	roll_timer.start(0.5)  # Adjust the duration of the roll as needed
+	roll_timer.start(0.5)  # Duration of the roll
+
+	# Disable collision with enemies
+	set_collision_mask_bit(1, false)  # Assuming enemies are on layer 2
 
 func handle_jump():
 	if on_ground and Input.is_action_just_pressed("ui_up") and not is_attacking and not is_rolling:
@@ -73,7 +76,12 @@ func handle_attack():
 	if Input.is_action_just_pressed("ui_focus_next") and not is_attacking and not is_rolling:
 		is_attacking = true
 		$AnimatedSprite.play("attack")
-		# Enable the CollisionShape2D immediately.
+		
+		# Assuming that the collision shape is on the right when the facing_direction is 1
+		# The position is flipped when the facing direction is -1 (left)
+		$Area2D/CollisionShape2D.position.x = $Area2D/CollisionShape2D.position.x * facing_direction
+		
+		# Enable the CollisionShape2D for the attack
 		$Area2D/CollisionShape2D.disabled = false
 
 
@@ -92,43 +100,67 @@ func handle_gravity_and_motion():
 	velocity = move_and_slide(velocity, FLOOR)
 
 func check_for_collisions():
+	if is_rolling:  # Skip collision checks while rolling
+		return
+
 	if get_slide_count() > 0:
 		for i in range(get_slide_count()):
 			var collision = get_slide_collision(i)
 			if "Enemy" in collision.collider.name:
-				dead()
+				take_damage()
+
+				
+func take_damage():
+	if is_rolling:  # Ignore damage when rolling
+		return
+	health -= 1
+	emit_signal("player_hurt", health)
+	if health > 0:
+		# Player still has health left, so play hurt animation instead of dying
+		$AnimatedSprite.play("hurt")
+		# Implement any knockback or invincibility frames here
+	else:
+		dead()  # Only call dead if health is 0 or less
 
 func dead():
 	is_dead = true
-	health -= 1
+	# Change scene only if health is 0
 	if health <= 0:
-		get_tree().change_scene("GameOverScreen.tscn")
-	else:
-		velocity = Vector2.ZERO
-		$AnimatedSprite.play("dead")
-		$CollisionShape2D.disabled = true
-		$Timer.start()     		
-		emit_signal("player_hurt", health)
+		get_tree().change_scene("Dead.tscn")
+	# Else, play dead animation, disable collision, etc.
+	velocity = Vector2.ZERO
+	$AnimatedSprite.play("dead")
+	$CollisionShape2D.disabled = true
+	# No need to start the timer here as we're not immediately changing the scene
 
 func _on_Timer_timeout():
-	get_tree().change_scene("GameOverScreen.tscn")
+	get_tree().change_scene("Dead.tscn")
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "attack":
 		is_attacking = false
+		
+		# Reset the CollisionShape2D to the default side (right side)
+		$Area2D/CollisionShape2D.position.x = abs($Area2D/CollisionShape2D.position.x)
+		
 		# Disable the CollisionShape2D as the attack is over
 		$Area2D/CollisionShape2D.disabled = true
-	elif $AnimatedSprite.animation == "roll":
-		if not roll_timer.is_stopped():
-			roll_timer.stop()
-		is_rolling = false
-	if on_ground:
-		$AnimatedSprite.play("idle")
-	else:
-		$AnimatedSprite.play("fall")
+		# Flip the collision shape back if the player is still facing left
+		if facing_direction == -1:
+			$Area2D/CollisionShape2D.position.x *= -1
+		
+	elif not is_rolling and not is_attacking:
+		if on_ground:
+			$AnimatedSprite.play("idle")
+		else:
+			$AnimatedSprite.play("fall")
+
 
 func _on_roll_timer_timeout():
 	is_rolling = false
+
+	# Re-enable collision with enemies
+	set_collision_mask_bit(1, true)  # Assuming enemies are on layer 2
 
 func _on_enemy_collision():
 	# Decrease player lives by 1
@@ -139,25 +171,33 @@ func _input(event):
 		return
 
 func player_hurt(new_health):
-	if is_dead:
-		return
+	# Update the player's health
 	health = new_health
+
+	# Check if the health bar exists and update its value
+	if ProgressBar:
+		ProgressBar.value = health * (ProgressBar.max_value / 3)  # Assuming max health is 3
+
+	# Check if the player is dead
 	if health <= 0:
-		get_tree().change_scene("res://TitleScreen.tscn")
+		# Player has no health left, so trigger the death sequence
+		is_dead = true
+		emit_signal("killed")  # If you have a signal for when the player is killed
+		$AnimatedSprite.play("dead")  # Make sure there's a 'dead' animation
+		set_physics_process(false)  # Stop physics processing
+		# Optionally disable player input and other gameplay elements here
+
+		# Wait for the death animation to finish, then change the scene
+		yield($AnimatedSprite, "animation_finished")
+		get_tree().change_scene("Dead.tscn")
 	else:
-		velocity = Vector2.ZERO
-		$AnimatedSprite.play("dead")
-		$CollisionShape2D.disabled = true
-		$Timer.start()
-		emit_signal("player_hurt", health)
+		# Player still has health left, so play a hurt animation if it exists
+		$AnimatedSprite.play("hurt")  # Ensure you have a 'hurt' animation
+		# Implement any additional logic for when the player is hurt but not dead
+		# such as knockback, invincibility frames, etc.
+
 
 
 func _on_Area2D_body_entered(body):
 	if is_attacking and body.has_method("take_damage"):
 		body.take_damage()
-
-
-		# Optionally, you can add some feedback effect, like a sound or an animation
-
-
-

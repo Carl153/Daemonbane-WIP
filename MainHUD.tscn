@@ -1,28 +1,90 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Fonts/splatch.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://MainHUD.gd" type="Script" id=2]
-[ext_resource path="res://GameOverScreen.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MainHud.gd" type="Script" id=1]
+[ext_resource path="res://HUD/Pixel Buttons pack 4.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/Blackwood Castle.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-size = 10
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 336, 96, 48, 32 )
 
-[node name="MainHUD" type="Node2D"]
-script = ExtResource( 2 )
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 84, 0, 42, 32 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="MainHud" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HUD"]
+position = Vector2( 715, 52 )
+scale = Vector2( 2.76191, 1.28125 )
+frames = SubResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="HUD"]
+position = Vector2( 910.856, 53 )
+scale = Vector2( 3.71433, 1.281 )
+frames = SubResource( 2 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="HUD"]
+position = Vector2( 67, 569 )
+scale = Vector2( 2.762, 1.281 )
+frames = SubResource( 8 )
+
+[node name="Lives" type="Label" parent="HUD"]
+margin_left = 675.0
+margin_top = 42.0
+margin_right = 763.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0.862745, 0.156863, 0.156863, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Lives:"
+
 [node name="Score" type="Label" parent="HUD"]
-margin_left = 32.0
-margin_top = 32.0
-margin_right = 96.0
-margin_bottom = 64.0
-custom_fonts/font = SubResource( 1 )
-text = "SCORE: 0"
+margin_left = 847.0
+margin_top = 42.0
+margin_right = 973.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0.862745, 0.156863, 0.156863, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Score:"
 
-[node name="Pie" parent="HUD" instance=ExtResource( 4 )]
-
-[node name="GameOverScreen" parent="HUD" instance=ExtResource( 3 )]
-visible = false
+[node name="Gems" type="Label" parent="HUD"]
+margin_left = 20.0
+margin_top = 557.0
+margin_right = 89.0
+margin_bottom = 581.0
+custom_colors/font_color = Color( 0.862745, 0.156863, 0.156863, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Gems x"

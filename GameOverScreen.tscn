@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GameOverScreen.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.294118, 0.482353, 0.537255, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[node name="GameOverScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -7.0
+margin_bottom = -7.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.490196 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -104.0
+margin_right = 148.0
+margin_bottom = 88.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="GameOver" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -79.0
+margin_top = 22.0
+margin_right = 81.0
+margin_bottom = 53.0
+rect_rotation = 0.37681
+custom_fonts/font = SubResource( 2 )
+text = "   Game Over"
+
+[node name="Score" type="Label" parent="Panel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -112.0
+margin_top = 64.0
+margin_right = 112.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Score: 9999"
+
+[node name="RestartButton" type="Button" parent="Panel"]
+margin_left = 96.0
+margin_top = 118.0
+margin_right = 171.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 4 )
+text = "Retry"
+
+[node name="MainScreen" type="Button" parent="Panel"]
+margin_left = 82.0
+margin_top = 156.0
+margin_right = 185.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 4 )
+text = "Main Screen"
+
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Panel/MainScreen" to="." method="_on_MainScreen_pressed"]

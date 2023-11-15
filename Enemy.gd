@@ -55,8 +55,10 @@ func _on_move_timer_timeout():
 func _on_direction_change_timer_timeout():
 	can_change_direction = true
 	
+	
+	
 func take_damage():
-	health -= 1
+	health -= 2
 	health_bar.value = health * 50  # Multiply by 50 to represent the percentage
 	if health <= 0:
 		die()

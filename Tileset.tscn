@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/floor_tile_2.png" type="Texture" id=1]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/floor_tile_1.png" type="Texture" id=2]
@@ -46,9 +46,11 @@
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/column_8.png" type="Texture" id=44]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/column_3.png" type="Texture" id=45]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/column_6.png" type="Texture" id=46]
+[ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/arch_1.png" type="Texture" id=47]
+[ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/window_glass_tall_2.png" type="Texture" id=48]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.75, 13.9531 )
+extents = Vector2( 15, 15.5 )
 
 [sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -13, -14 )
@@ -564,11 +566,31 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite27"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite27/StaticBody2D"]
+position = Vector2( 16, 16.5 )
+shape = SubResource( 1 )
+
 [node name="Sprite28" type="Sprite" parent="."]
 position = Vector2( 0, 384 )
 texture = ExtResource( 26 )
 centered = false
 region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Arch1" type="Sprite" parent="."]
+position = Vector2( 266, 17 )
+texture = ExtResource( 47 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="WindowGlassTall2" type="Sprite" parent="."]
+position = Vector2( 261, 79 )
+texture = ExtResource( 48 )
 __meta__ = {
 "_edit_group_": true
 }

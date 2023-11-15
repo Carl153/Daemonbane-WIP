@@ -157,7 +157,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.14127, 0.464801 )
+extents = Vector2( 3.28866, 0.522901 )
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( -1, 0 )
@@ -169,15 +169,16 @@ position = Vector2( -2.906, -0.393321 )
 scale = Vector2( 0.515698, 0.487287 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 2.906, 5.11318 )
+position = Vector2( 3.73629, 5.89982 )
 enabled = true
 cast_to = Vector2( -3.8147e-06, 11.4063 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.08616e-07, -0.393321 )
+position = Vector2( -0.622714, -0.983308 )
 scale = Vector2( 1.70417, -23.694 )
 shape = SubResource( 2 )
 

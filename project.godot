@@ -14,6 +14,10 @@ config/name="Daemonbane WIP"
 run/main_scene="res://World3.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Mainhud="*res://MAINHUD.tscn"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
