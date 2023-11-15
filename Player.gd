@@ -77,12 +77,15 @@ func handle_attack():
 		is_attacking = true
 		$AnimatedSprite.play("attack")
 		
-		# Assuming that the collision shape is on the right when the facing_direction is 1
-		# The position is flipped when the facing direction is -1 (left)
-		$Area2D/CollisionShape2D.position.x = $Area2D/CollisionShape2D.position.x * facing_direction
+		# Set the position of the CollisionShape2D based on the facing direction
+		$Area2D/CollisionShape2D.position.x = abs($Area2D/CollisionShape2D.position.x) * facing_direction
 		
 		# Enable the CollisionShape2D for the attack
 		$Area2D/CollisionShape2D.disabled = false
+
+		# Play the attack sound
+		$AttackSound.play()
+
 
 
 

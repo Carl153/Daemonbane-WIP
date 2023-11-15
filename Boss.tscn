@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Boss.gd" type="Script" id=1]
 [ext_resource path="res://BadGuys/Skeleton/Death.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://BadGuys/Skeleton/Take Hit.png" type="Texture" id=5]
 [ext_resource path="res://BadGuys/Skeleton/Attack.png" type="Texture" id=6]
 [ext_resource path="res://healthbare.tres" type="Theme" id=7]
+[ext_resource path="res://Music/bone-crack-121580.mp3" type="AudioStream" id=8]
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -203,6 +204,9 @@ position = Vector2( 50.6474, -16.5195 )
 shape = SubResource( 27 )
 
 [node name="Timer2" type="Timer" parent="."]
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

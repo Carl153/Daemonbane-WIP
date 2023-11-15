@@ -70,6 +70,7 @@ func take_damage():
 func die():
 	is_dead = true
 	$AnimatedSprite.play("dead")
+	$AttackSound.play()
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)

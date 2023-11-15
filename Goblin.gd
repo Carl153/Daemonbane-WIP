@@ -69,6 +69,9 @@ func die():
 	# Play the 'dead' animation
 	
 	$AnimatedSprite.play("dead")
+	
+			# Play the attack sound
+	$AttackSound.play()
 	# Disable any further collision checks or processing
 	set_physics_process(false)
 	set_process(false)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://BadGuys/Goblin/Death.png" type="Texture" id=1]
 [ext_resource path="res://BadGuys/Goblin/Take Hit.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://BadGuys/Goblin/Idle.png" type="Texture" id=5]
 [ext_resource path="res://BadGuys/Goblin/Attack.png" type="Texture" id=6]
 [ext_resource path="res://healthbare.tres" type="Theme" id=7]
+[ext_resource path="res://Music/goblin-death-6729 (1).mp3" type="AudioStream" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -189,7 +190,7 @@ position = Vector2( -2.906, -0.393321 )
 scale = Vector2( 0.515698, 0.487287 )
 frames = SubResource( 29 )
 animation = "walk"
-frame = 6
+frame = 2
 playing = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -214,5 +215,8 @@ margin_right = 10.7154
 margin_bottom = -13.1726
 theme = ExtResource( 7 )
 value = 70.0
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

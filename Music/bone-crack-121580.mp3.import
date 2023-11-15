@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bone-crack-121580.mp3-6ef17938760119b9376f65dcbc686618.mp3str"
+
+[deps]
+
+source_file="res://Music/bone-crack-121580.mp3"
+dest_files=[ "res://.import/bone-crack-121580.mp3-6ef17938760119b9376f65dcbc686618.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

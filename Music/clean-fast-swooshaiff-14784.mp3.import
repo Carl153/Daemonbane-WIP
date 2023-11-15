@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/clean-fast-swooshaiff-14784.mp3-4ef8195c8cb709906a9513e09e455b71.mp3str"
+
+[deps]
+
+source_file="res://Music/clean-fast-swooshaiff-14784.mp3"
+dest_files=[ "res://.import/clean-fast-swooshaiff-14784.mp3-4ef8195c8cb709906a9513e09e455b71.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
