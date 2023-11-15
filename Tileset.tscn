@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=65 format=2]
+=======
+[gd_scene load_steps=50 format=2]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/floor_tile_2.png" type="Texture" id=1]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/floor_tile_1.png" type="Texture" id=2]
@@ -46,6 +50,7 @@
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/column_8.png" type="Texture" id=44]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/column_3.png" type="Texture" id=45]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/column_6.png" type="Texture" id=46]
+<<<<<<< HEAD
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/platform_1.png" type="Texture" id=47]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/platform_4.png" type="Texture" id=48]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Tiles/platform_2.png" type="Texture" id=49]
@@ -87,6 +92,23 @@ extents = Vector2( 13.037, 10 )
 
 [node name="Floor End Left" type="Sprite" parent="Floors"]
 position = Vector2( 1, 0 )
+=======
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.75, 13.9531 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -13, -14 )
+b = Vector2( 22, 24 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 16, -16 )
+b = Vector2( -12, 23 )
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 texture = ExtResource( 2 )
 centered = false
 region_rect = Rect2( 0, 32, 32, 32 )
@@ -94,6 +116,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Floors/Floor End Left"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor End Left/StaticBody2D"]
@@ -102,6 +125,16 @@ position = Vector2( 97.9375, -8 )
 shape = SubResource( 9 )
 
 [node name="Floor Carpet End Right" type="Sprite" parent="Floors"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+visible = false
+position = Vector2( 16, 15.9531 )
+shape = SubResource( 1 )
+
+[node name="Sprite42" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 64 )
 texture = ExtResource( 36 )
 centered = false
@@ -110,6 +143,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Floors/Floor Carpet End Right"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor Carpet End Right/StaticBody2D"]
@@ -118,6 +152,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 9 )
 
 [node name="Floor Carpet Middle 2" type="Sprite" parent="Floors"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite42"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite42/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite43" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 64 )
 texture = ExtResource( 43 )
 centered = false
@@ -126,6 +170,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Floors/Floor Carpet Middle 2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor Carpet Middle 2/StaticBody2D"]
@@ -134,6 +179,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 9 )
 
 [node name="Floor Carpet Middle" type="Sprite" parent="Floors"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite43"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite43/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite44" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 64 )
 texture = ExtResource( 42 )
 centered = false
@@ -142,6 +197,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Floors/Floor Carpet Middle"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor Carpet Middle/StaticBody2D"]
@@ -150,6 +206,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 9 )
 
 [node name="Floor Carpet End Left" type="Sprite" parent="Floors"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite44"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite44/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite45" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 64 )
 texture = ExtResource( 35 )
 centered = false
@@ -158,6 +224,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Floors/Floor Carpet End Left"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor Carpet End Left/StaticBody2D"]
@@ -166,6 +233,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 9 )
 
 [node name="Floor Middle 2" type="Sprite" parent="Floors"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite45"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite45/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -174,6 +251,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Floors/Floor Middle 2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor Middle 2/StaticBody2D"]
@@ -217,6 +295,17 @@ shape = SubResource( 9 )
 
 [node name="Stair Down Right" type="Sprite" parent="Stairs"]
 position = Vector2( 1, 448 )
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+visible = false
+position = Vector2( 16, 14.9688 )
+shape = SubResource( 1 )
+
+[node name="Sprite29" type="Sprite" parent="."]
+position = Vector2( 0, 448 )
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 texture = ExtResource( 14 )
 centered = false
 region_rect = Rect2( 0, 32, 32, 32 )
@@ -224,6 +313,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Stairs/Stair Down Right"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs/Stair Down Right/StaticBody2D"]
@@ -232,6 +322,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 10 )
 
 [node name="Stair Middle Right" type="Sprite" parent="Stairs"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite29"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite29/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )
+
+[node name="Sprite30" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 448 )
 texture = ExtResource( 15 )
 centered = false
@@ -240,6 +340,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Stairs/Stair Middle Right"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs/Stair Middle Right/StaticBody2D"]
@@ -248,6 +349,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 9 )
 
 [node name="Stair Down Left" type="Sprite" parent="Stairs"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite30"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite30/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite31" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 448 )
 texture = ExtResource( 13 )
 centered = false
@@ -256,6 +367,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Stairs/Stair Down Left"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs/Stair Down Left/StaticBody2D"]
@@ -264,6 +376,16 @@ position = Vector2( 16, 16 )
 shape = SubResource( 11 )
 
 [node name="Stair Middle Left" type="Sprite" parent="Stairs"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite31"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite31/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 3 )
+
+[node name="Sprite32" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 448 )
 texture = ExtResource( 16 )
 centered = false
@@ -272,6 +394,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Stairs/Stair Middle Left"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs/Stair Middle Left/StaticBody2D"]
@@ -374,6 +497,16 @@ shape = SubResource( 4 )
 [node name="Walls" type="Node" parent="."]
 
 [node name="Void Filler Texture" type="Sprite" parent="Walls"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite32"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite32/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite41" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 512 )
 texture = ExtResource( 41 )
 centered = false
@@ -382,6 +515,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Void Filler Texture"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Void Filler Texture/StaticBody2D"]
@@ -392,12 +526,25 @@ shape = SubResource( 9 )
 [node name="Stone Filler Texture 2" type="Sprite" parent="Walls"]
 position = Vector2( 64, 576 )
 texture = ExtResource( 32 )
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite41"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite41/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 3 )
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 centered = false
 region_rect = Rect2( 0, 32, 32, 32 )
 __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Stone Filler Texture" type="Sprite" parent="Walls"]
 position = Vector2( 128, 576 )
 texture = ExtResource( 33 )
@@ -427,12 +574,25 @@ shape = SubResource( 5 )
 position = Vector2( 131, 816 )
 scale = Vector2( 1.5625, 1 )
 texture = ExtResource( 53 )
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+texture = ExtResource( 4 )
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 centered = false
 region_rect = Rect2( 0, 32, 32, 32 )
 __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Wall Left"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall Left/StaticBody2D"]
@@ -546,6 +706,16 @@ __meta__ = {
 [node name="Windows" type="Node" parent="."]
 
 [node name="Glass Window Upper" type="Sprite" parent="Windows"]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite4/StaticBody2D"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 512 )
 texture = ExtResource( 11 )
 centered = false
@@ -554,7 +724,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Glass Window Base" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite6" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 512 )
 texture = ExtResource( 12 )
 centered = false
@@ -563,7 +737,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Open Window Small Base" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite7" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 512 )
 texture = ExtResource( 8 )
 centered = false
@@ -572,7 +750,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Open Window Small Top" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite8" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 576 )
 texture = ExtResource( 9 )
 centered = false
@@ -581,7 +763,101 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Open Window Base 2" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite33" type="Sprite" parent="."]
+position = Vector2( 64, 576 )
+texture = ExtResource( 32 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite34" type="Sprite" parent="."]
+position = Vector2( 128, 576 )
+texture = ExtResource( 33 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite35" type="Sprite" parent="."]
+position = Vector2( 192, 576 )
+texture = ExtResource( 37 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite36" type="Sprite" parent="."]
+position = Vector2( 64, 704 )
+texture = ExtResource( 40 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite47" type="Sprite" parent="."]
+position = Vector2( 128, 704 )
+texture = ExtResource( 44 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite37" type="Sprite" parent="."]
+position = Vector2( 0, 704 )
+texture = ExtResource( 46 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite38" type="Sprite" parent="."]
+position = Vector2( 192, 640 )
+texture = ExtResource( 34 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite39" type="Sprite" parent="."]
+position = Vector2( 128, 640 )
+texture = ExtResource( 39 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite40" type="Sprite" parent="."]
+position = Vector2( 64, 640 )
+texture = ExtResource( 45 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite46" type="Sprite" parent="."]
+position = Vector2( 0, 640 )
+texture = ExtResource( 38 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite9" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 128 )
 texture = ExtResource( 7 )
 centered = false
@@ -590,7 +866,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Open Window Top" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite10" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 128 )
 texture = ExtResource( 6 )
 centered = false
@@ -599,7 +879,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Open Window Base" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite11" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 128 )
 texture = ExtResource( 5 )
 centered = false
@@ -608,7 +892,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Open Window Middle" type="Sprite" parent="Windows"]
+=======
+[node name="Sprite12" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 128 )
 texture = ExtResource( 7 )
 centered = false
@@ -617,6 +905,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Traps" type="Node" parent="."]
 
 [node name="Spikes" type="Sprite" parent="Traps"]
@@ -675,6 +964,9 @@ __meta__ = {
 [node name="Statue Pillars" type="Node" parent="."]
 
 [node name="Pillar Statue Shadow Upper Right" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite13" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 192 )
 texture = ExtResource( 10 )
 centered = false
@@ -683,7 +975,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Head" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite14" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 192 )
 texture = ExtResource( 20 )
 centered = false
@@ -692,7 +988,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Shadow Upper" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite15" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 192 )
 texture = ExtResource( 17 )
 centered = false
@@ -701,7 +1001,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Shadow Left" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite16" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 192 )
 texture = ExtResource( 28 )
 centered = false
@@ -710,7 +1014,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Middle" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite17" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 256 )
 texture = ExtResource( 19 )
 centered = false
@@ -719,7 +1027,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Base Shadow Right" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite18" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 256 )
 texture = ExtResource( 22 )
 centered = false
@@ -728,7 +1040,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Base Shadow Left" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite19" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 256 )
 texture = ExtResource( 31 )
 centered = false
@@ -737,7 +1053,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Statue Base" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite20" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 256 )
 texture = ExtResource( 21 )
 centered = false
@@ -746,7 +1066,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Shadow Middle Right" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite21" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 0, 320 )
 texture = ExtResource( 30 )
 centered = false
@@ -755,7 +1079,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Shadow Bottom Left" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite22" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 64, 320 )
 texture = ExtResource( 24 )
 centered = false
@@ -764,7 +1092,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Base" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite23" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 128, 320 )
 texture = ExtResource( 29 )
 centered = false
@@ -773,7 +1105,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+<<<<<<< HEAD
 [node name="Pillar Shadow Bottom Right" type="Sprite" parent="Statue Pillars"]
+=======
+[node name="Sprite24" type="Sprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 position = Vector2( 192, 320 )
 texture = ExtResource( 25 )
 centered = false
@@ -781,3 +1117,42 @@ region_rect = Rect2( 0, 32, 32, 32 )
 __meta__ = {
 "_edit_group_": true
 }
+<<<<<<< HEAD
+=======
+
+[node name="Sprite25" type="Sprite" parent="."]
+position = Vector2( 192, 384 )
+texture = ExtResource( 23 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite26" type="Sprite" parent="."]
+position = Vector2( 128, 384 )
+texture = ExtResource( 18 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite27" type="Sprite" parent="."]
+position = Vector2( 64, 384 )
+texture = ExtResource( 27 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite28" type="Sprite" parent="."]
+position = Vector2( 0, 384 )
+texture = ExtResource( 26 )
+centered = false
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3

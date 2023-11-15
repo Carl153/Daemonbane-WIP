@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=70 format=2]
+=======
+[gd_scene load_steps=69 format=2]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Character/Colour1/Outline/120x80_PNGSheets/_Death.png" type="Texture" id=1]
 [ext_resource path="res://Medieval_Castle_Asset_Pack/Character/Colour1/Outline/120x80_PNGSheets/_Run.png" type="Texture" id=2]
@@ -300,7 +304,11 @@ animations = [ {
 "frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "attack",
+<<<<<<< HEAD
 "speed": 10.0
+=======
+"speed": 15.0
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 }, {
 "frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
@@ -341,12 +349,17 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 21, 39 )
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 100, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 162, 290 )
 scale = Vector2( 0.5, 0.5 )
+=======
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 208, 447 )
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -356,7 +369,11 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 52 )
 animation = "idle"
+<<<<<<< HEAD
 frame = 2
+=======
+frame = 1
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -365,6 +382,7 @@ position = Vector2( -11, 1 )
 shape = SubResource( 53 )
 
 [node name="Follow Camera" type="Position2D" parent="."]
+<<<<<<< HEAD
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -376,3 +394,5 @@ shape = SubResource( 111 )
 disabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+=======
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3

@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 [gd_scene load_steps=33 format=2]
+=======
+[gd_scene load_steps=27 format=2]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 
 [ext_resource path="res://Enemies/Skeleton/Walk.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Skeleton/Attack.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/Skeleton/Death.png" type="Texture" id=3]
 [ext_resource path="res://Enemies/Skeleton/Idle.png" type="Texture" id=4]
+<<<<<<< HEAD
 [ext_resource path="res://Skeleton.gd" type="Script" id=5]
 [ext_resource path="res://Enemies/Skeleton/Take Hit.png" type="Texture" id=6]
+=======
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -87,6 +94,7 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 450, 45, 150, 64 )
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 6 )
@@ -107,6 +115,8 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 450, 0, 150, 150 )
 
+=======
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 1 )
@@ -144,11 +154,14 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
+<<<<<<< HEAD
 "frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "takedamage",
 "speed": 8.0
 }, {
+=======
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "walk",
@@ -156,6 +169,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=22]
+<<<<<<< HEAD
 radius = 13.0
 height = 0.0
 
@@ -165,6 +179,13 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -11, -6.5 )
 scale = Vector2( 0.853333, 0.796875 )
+=======
+radius = 22.5
+
+[node name="Skeleton" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 frames = SubResource( 21 )
 animation = "idle"
 frame = 2
@@ -172,5 +193,9 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+<<<<<<< HEAD
 position = Vector2( -7, -8 )
+=======
+position = Vector2( 8.5, -2 )
+>>>>>>> 88ca72c2447933b7785f9a7af0c9e1ca23ac3ba3
 shape = SubResource( 22 )
